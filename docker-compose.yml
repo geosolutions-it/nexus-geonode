@@ -85,7 +85,7 @@ services:
 
   # Geoserver backend
   geoserver:
-    image: geonode/geoserver:2.18.2
+    image: geonode/geoserver:2.19.x
     build: ./docker/geoserver/
     container_name: geoserver4${COMPOSE_PROJECT_NAME}
     healthcheck:
