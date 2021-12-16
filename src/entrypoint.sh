@@ -53,6 +53,7 @@ then
     invoke migrations
     invoke prepare
     invoke fixtures
+    invoke nexusfixture
 
     if [ ${IS_CELERY} = "true" ] || [ ${IS_CELERY} = "True" ]
     then
@@ -81,6 +82,7 @@ else
             echo "LOG INIT" > /usr/src/nexus/invoke.log
             invoke updategeoip
             invoke fixtures
+            invoke nexusfixture
             invoke monitoringfixture
             invoke initialized
             invoke updateadmin

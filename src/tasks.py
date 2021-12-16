@@ -271,6 +271,13 @@ def monitoringfixture(ctx):
 
 
 @task
+def nexusfixture(ctx):
+    print("************************** nexus fixture ********************************")
+    ctx.run("python manage.py loaddata /usr/src/nexus/fixtures/nexus_harvesters.json \
+    --settings={0}".format(_localsettings()), pty=True)
+
+
+@task
 def updategeoip(ctx):
     print("**************************update geoip*******************************")
     if ast.literal_eval(os.environ.get('MONITORING_ENABLED', 'False')):
