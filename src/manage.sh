@@ -1,2 +1,6 @@
-. $HOME/.override_env
-/usr/local/bin/python /usr/src/nexus/manage.py $@
+set -a
+. ../.env
+set +a
+
+python manage.py $@
+

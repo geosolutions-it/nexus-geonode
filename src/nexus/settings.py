@@ -52,6 +52,10 @@ LOCAL_ROOT = os.path.abspath(os.path.dirname(__file__))
 
 WSGI_APPLICATION = "{}.wsgi.application".format(PROJECT_NAME)
 
+ALLOWED_HOSTS=['*']
+# PROXY_ALLOWED_HOSTS=['geoserver.pacificdata.org', 'dev.nexus.geosolutionsgroup.com']
+PROXY_ALLOWED_HOSTS=['nexus.pacificdata.org','dev.nexus.geosolutionsgroup.com','geoserver.pacificdata.org','prodgeoserver-master.spc.links.com.au','prodgeoserver-lb.spc.links.com.au','risk.spc.int','r2r.spc.int','www.pacificdisaster.net','gem.spc.int','www.pacific.undp.org']
+
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = os.getenv('LANGUAGE_CODE', "en")

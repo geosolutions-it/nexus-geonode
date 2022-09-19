@@ -1,11 +1,26 @@
 {% extends "page.html" %}
 {% block container %}
 <div class="pdn-custom-page-container">
-    <p class="h2">PDN Experts</p>
+    <p class="h2">Pacific DRM/CC Experts</p>
+
+{% comment %}
     <ul class="list-group">
     {% for data in object_list %}
-    <li class="list-group-item bordertopbottom"><strong>{{data.name}}</strong>: {{data.title}}</li>
+    <li class="list-group-item bordertopbottom"><strong>{{data.name}}</strong>: {{data.title}}, {{data.ministry}}, {{data.country}}</li>
     {% endfor %}
     </ul>
+{% endcomment %}
+
+<table class="table">
+{% for data in object_list %}
+<tr>
+<td style="width: 33%"><strong>{{data.name}}</strong></td>
+<td>{{data.title}}</td>
+<td>{{data.ministry}}</td>
+<td>{{data.country}}</td>
+</tr>
+{% endfor %}
+</table>
+
 </div>
 {% endblock %}
